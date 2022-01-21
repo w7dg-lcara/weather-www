@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Candler NC Weather Station" />
+	<meta name="keywords" content="candler,asheville,north carolina,weather" />
+	<meta name="author" content="Joe Jaworski" />
+	<link rel="stylesheet" type="text/css" href="styles.css" media="screen,projection" />
+	<title>Candler, NC Weather Report</title>
+	
+  <script src="fc/FusionCharts.js" type="text/javascript">
+  </script>
+
+</head>
+
+<body>
+<div id="wrap">
+	<div id="header">
+  	<h1>candler weather</h1>
+		<p><strong>candler, north carolina 28715</strong></p>
+  </div>
+
+  <div id="leftside">
+		<h2 class="hide">menu</h2>
+		<ul class="avmenu">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="temp.html">Temperature</a></li>
+			<li><a class="current" href="rain.html">Rain</a></li>
+			<li><a href="wind.html">Wind</a></li>
+			<li><a href="history.html">History</a></li>
+			<li><a href="about.html">About</a></li>
+		</ul>
+	</div>
+
+  <div id="contentwide">
+		<h2><img src="img/rainy.gif" width="26" height="26" alt="" class = "alignleft"/>rain</h2>
+		
+	<div id="chartdiv">&nbsp;</div>
+	<p>&nbsp;</p>
+	<div id="chartdiv2">&nbsp;</div>
+	<p>&nbsp;</p>
+	<div id="chartdiv3">&nbsp;</div>
+  
+	
+	<!-- Rain: Last 12 hours -->
+	<script type="text/javascript">
+	if(<!-- grRainByHour[12] --> || <!-- grRainByHour[13] --> || <!-- grRainByHour[14] --> ||
+	<!-- grRainByHour[15] --> || <!-- grRainByHour[16] --> || <!-- grRainByHour[17] --> ||
+	<!-- grRainByHour[18] --> || <!-- grRainByHour[19] --> || <!-- grRainByHour[20] --> ||
+	<!-- grRainByHour[21] --> || <!-- grRainByHour[22] --> || <!-- grRainByHour[23] -->)
+	{
+		var myChart = new FusionCharts("fc/FCF_Column3D.swf", "myChartId", "600", "300");
+		myChart.setDataXML("<graph caption='Rainfall' subcaption='Last 12 Hours'\
+			xAxisName='Hour'\
+			yAxisName='Rain (inches)'\
+			showNames='1'\
+			decimalPrecision='2'\
+			formatNumberScale='0' >\
+			<set name='<!-- grTimeRefHours[12] -->' value='<!-- grRainByHour[12] -->' color='14abb4'/>\
+			<set name='<!-- grTimeRefHours[13] -->' value='<!-- grRainByHour[13] -->' color='16c0c6'/>\
+			<set name='<!-- grTimeRefHours[14] -->' value='<!-- grRainByHour[14] -->' color='18d6d8'/>\
+			<set name='<!-- grTimeRefHours[15] -->' value='<!-- grRainByHour[15] -->' color='1ee6e4'/>\
+			<set name='<!-- grTimeRefHours[16] -->' value='<!-- grRainByHour[16] -->' color='30e8e6'/>\
+			<set name='<!-- grTimeRefHours[17] -->' value='<!-- grRainByHour[17] -->' color='42eae8'/>\
+			<set name='<!-- grTimeRefHours[18] -->' value='<!-- grRainByHour[18] -->' color='54ecea'/>\
+			<set name='<!-- grTimeRefHours[19] -->' value='<!-- grRainByHour[19] -->' color='66eeec'/>\
+			<set name='<!-- grTimeRefHours[20] -->' value='<!-- grRainByHour[20] -->' color='78f0ef'/>\
+			<set name='<!-- grTimeRefHours[21] -->' value='<!-- grRainByHour[21] -->' color='8af2f1'/>\
+			<set name='<!-- grTimeRefHours[22] -->' value='<!-- grRainByHour[22] -->' color='9cf4f3'/>\
+			<set name='<!-- grTimeRefHours[23] -->' value='<!-- grRainByHour[23] -->' color='aef6f5'/>\
+			</graph>");
+		myChart.render("chartdiv");
+	};
+	</script>
+
+
+
+	<!-- Rain: Last 10 days -->
+	<script type="text/javascript">
+		if(<!-- grRainByDay[14] --> ||
+	<!-- grRainByDay[15] --> || <!-- grRainByDay[16] --> || <!-- grRainByDay[17] --> ||
+	<!-- grRainByDay[18] --> || <!-- grRainByDay[19] --> || <!-- grRainByDay[20] --> ||
+	<!-- grRainByDay[21] --> || <!-- grRainByDay[22] --> || <!-- grRainByDay[23] -->)
+	{
+
+		var myChart2 = new FusionCharts("fc/FCF_Column3D.swf", "myChartId2", "600", "300");
+		myChart2.setDataXML("<graph caption='Rainfall' subcaption='Last 10 Days'\
+			xAxisName='Date'\
+			yAxisName='Rain (inches)'\
+			showNames='1'\
+			decimalPrecision='2'\
+			formatNumberScale='0' >\
+			<set name='<!-- grTimeRefDays[14] -->' value='<!-- grRainByDay[14] -->' color='31d804'/>\
+			<set name='<!-- grTimeRefDays[15] -->' value='<!-- grRainByDay[15] -->' color='36eb05'/>\
+			<set name='<!-- grTimeRefDays[16] -->' value='<!-- grRainByDay[16] -->' color='3dfa0a'/>\
+			<set name='<!-- grTimeRefDays[17] -->' value='<!-- grRainByDay[17] -->' color='4cfb1d'/>\
+			<set name='<!-- grTimeRefDays[18] -->' value='<!-- grRainByDay[18] -->' color='5bfc30'/>\
+			<set name='<!-- grTimeRefDays[19] -->' value='<!-- grRainByDay[19] -->' color='69fd41'/>\
+			<set name='<!-- grTimeRefDays[20] -->' value='<!-- grRainByDay[20] -->' color='7afe56'/>\
+			<set name='<!-- grTimeRefDays[21] -->' value='<!-- grRainByDay[21] -->' color='89ff69'/>\
+			<set name='<!-- grTimeRefDays[22] -->' value='<!-- grRainByDay[22] -->' color='99ff7d'/>\
+			<set name='<!-- grTimeRefDays[23] -->' value='<!-- grRainByDay[23] -->' color='a8ff91'/>\
+			</graph>");
+	    myChart2.render("chartdiv2");
+		};
+   </script>
+
+
+		
+
+	<!-- Rain: last 12 months -->
+	<script type="text/javascript">
+	var myChart3 = new FusionCharts("fc/FCF_MSColumn2D.swf", "myChartId3", "600", "400");
+	myChart3.setDataXML("<graph caption='Rainfall' subcaption='Last 12 Months'\
+		xAxisName='Month'\
+		yAxisName='Rain (inches)'\
+		showNames='1'\
+		decimalPrecision='2'\
+		formatNumberScale='0' >\
+		<categories>\
+      <category name='<!-- grTimeRefMonths[12] -->' />\
+			<category name='<!-- grTimeRefMonths[13] -->' />\
+			<category name='<!-- grTimeRefMonths[14] -->' />\
+      <category name='<!-- grTimeRefMonths[15] -->' />\
+      <category name='<!-- grTimeRefMonths[16] -->' />\
+      <category name='<!-- grTimeRefMonths[17] -->' />\
+      <category name='<!-- grTimeRefMonths[18] -->' />\
+			<category name='<!-- grTimeRefMonths[19] -->' />\
+			<category name='<!-- grTimeRefMonths[20] -->' />\
+			<category name='<!-- grTimeRefMonths[21] -->' />\
+			<category name='<!-- grTimeRefMonths[22] -->' />\
+			<category name='<!-- grTimeRefMonths[23] -->' />\
+			</categories>\
+	<dataset color='fb71e6' showValue='1'>\
+      <set value='<!-- grRainByMonth[12] -->' />\
+      <set value='<!-- grRainByMonth[13] -->' />\
+      <set value='<!-- grRainByMonth[14] -->' />\
+      <set value='<!-- grRainByMonth[15] -->' />\
+      <set value='<!-- grRainByMonth[16] -->' />\
+      <set value='<!-- grRainByMonth[17] -->' />\
+      <set value='<!-- grRainByMonth[18] -->' />\
+      <set value='<!-- grRainByMonth[19] -->' />\
+      <set value='<!-- grRainByMonth[20] -->' />\
+      <set value='<!-- grRainByMonth[21] -->' />\
+      <set value='<!-- grRainByMonth[22] -->' />\
+      <set value='<!-- grRainByMonth[23] -->' />\
+   </dataset>\
+	</graph>");
+      
+    myChart3.render("chartdiv3");
+   </script>
+			
+	</div>
+
+	<div id="footer">
+		<p><span>&copy; 2013 Joe Jaworski<br />
+		all rights reserved&nbsp;&nbsp;&brvbar;&nbsp;&nbsp;<a href="njs.html" onmouseover="this.href='mail' + 'to:' + 'jj' + String.fromCharCode(64) + 'joejaworski' + '.' + 'com'">Email</a></span></p>
+	</div>
+
+</div>
+</body>
+</html>

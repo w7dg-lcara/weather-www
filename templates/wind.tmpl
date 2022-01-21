@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Candler NC Weather Station" />
+	<meta name="keywords" content="candler,asheville,north carolina,weather" />
+	<meta name="author" content="Joe Jaworski" />
+	<link rel="stylesheet" type="text/css" href="styles.css" media="screen,projection" />
+	<title>Candler, NC Weather Report</title>
+	
+  <script src="fc/FusionCharts.js" type="text/javascript">
+  </script>
+
+</head>
+
+<body>
+<div id="wrap">
+	<div id="header">
+  	<h1>candler weather</h1>
+		<p><strong>candler, north carolina 28715</strong></p>
+  </div>
+
+  <div id="leftside">
+		<h2 class="hide">menu</h2>
+		<ul class="avmenu">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="temp.html">Temperature</a></li>
+			<li><a href="rain.html">Rain</a></li>
+			<li><a class="current" href="wind.html">Wind</a></li>
+			<li><a href="history.html">History</a></li>
+			<li><a href="about.html">About</a></li>
+		</ul>
+	</div>
+
+  <div id="contentwide">
+		<h2><img src="img/windy.gif" width="26" height="26" alt="" class="alignleft" />wind</h2>
+		
+	<div id="chartdiv">&nbsp;</div>
+	<p>&nbsp;</p>
+	<div id="chartdiv2">&nbsp;</div>
+	<p>&nbsp;</p>
+	<div id="chartdiv3">&nbsp;</div>
+  
+	
+	<!-- Wind: Last 10 days -->
+	<script type="text/javascript">
+	var myChart2 = new FusionCharts("fc/FCF_Column3D.swf", "myChartId2", "600", "300");
+	myChart2.setDataXML("<graph caption='Maximum Wind Speed' subcaption='Last 10 Days'\
+		xAxisName='Date'\
+		yAxisName='Speed (MPH)'\
+		showNames='1'\
+		decimalPrecision='0'\
+		formatNumberScale='0' >\
+		<set name='<!-- grTimeRefDays[14] -->' value='<!-- grWindHiByDays[14] -->' color='31d804'/>\
+		<set name='<!-- grTimeRefDays[15] -->' value='<!-- grWindHiByDays[15] -->' color='36eb05'/>\
+		<set name='<!-- grTimeRefDays[16] -->' value='<!-- grWindHiByDays[16] -->' color='3dfa0a'/>\
+		<set name='<!-- grTimeRefDays[17] -->' value='<!-- grWindHiByDays[17] -->' color='4cfb1d'/>\
+		<set name='<!-- grTimeRefDays[18] -->' value='<!-- grWindHiByDays[18] -->' color='5bfc30'/>\
+		<set name='<!-- grTimeRefDays[19] -->' value='<!-- grWindHiByDays[19] -->' color='69fd41'/>\
+		<set name='<!-- grTimeRefDays[20] -->' value='<!-- grWindHiByDays[20] -->' color='7afe56'/>\
+		<set name='<!-- grTimeRefDays[21] -->' value='<!-- grWindHiByDays[21] -->' color='89ff69'/>\
+		<set name='<!-- grTimeRefDays[22] -->' value='<!-- grWindHiByDays[22] -->' color='99ff7d'/>\
+		<set name='<!-- grTimeRefDays[23] -->' value='<!-- grWindHiByDays[23] -->' color='a8ff91'/>\
+		</graph>");
+    myChart2.render("chartdiv2");
+   </script>
+
+
+		
+
+	<!-- Wind: last 12 months -->
+	<script type="text/javascript">
+	var myChart3 = new FusionCharts("fc/FCF_MSColumn2D.swf", "myChartId3", "600", "400");
+	myChart3.setDataXML("<graph caption='Maximum Wind Speed' subcaption='Last 12 Months'\
+		xAxisName='Month'\
+		yAxisName='Speed (MPH)'\
+		showNames='1'\
+		decimalPrecision='0'\
+		formatNumberScale='0' >\
+		<categories>\
+      <category name='<!-- grTimeRefMonths[12] -->' />\
+			<category name='<!-- grTimeRefMonths[13] -->' />\
+			<category name='<!-- grTimeRefMonths[14] -->' />\
+      <category name='<!-- grTimeRefMonths[15] -->' />\
+      <category name='<!-- grTimeRefMonths[16] -->' />\
+      <category name='<!-- grTimeRefMonths[17] -->' />\
+      <category name='<!-- grTimeRefMonths[18] -->' />\
+			<category name='<!-- grTimeRefMonths[19] -->' />\
+			<category name='<!-- grTimeRefMonths[20] -->' />\
+			<category name='<!-- grTimeRefMonths[21] -->' />\
+			<category name='<!-- grTimeRefMonths[22] -->' />\
+			<category name='<!-- grTimeRefMonths[23] -->' />\
+			</categories>\
+	<dataset color='f8d636' showValue='1'>\
+      <set value='<!-- grWindHiByMonths[12] -->' />\
+      <set value='<!-- grWindHiByMonths[13] -->' />\
+      <set value='<!-- grWindHiByMonths[14] -->' />\
+      <set value='<!-- grWindHiByMonths[15] -->' />\
+      <set value='<!-- grWindHiByMonths[16] -->' />\
+      <set value='<!-- grWindHiByMonths[17] -->' />\
+      <set value='<!-- grWindHiByMonths[18] -->' />\
+      <set value='<!-- grWindHiByMonths[19] -->' />\
+      <set value='<!-- grWindHiByMonths[20] -->' />\
+      <set value='<!-- grWindHiByMonths[21] -->' />\
+      <set value='<!-- grWindHiByMonths[22] -->' />\
+      <set value='<!-- grWindHiByMonths[23] -->' />\
+   </dataset>\
+	</graph>");
+      
+    myChart3.render("chartdiv3");
+   </script>
+		</div>
+
+	<div id="footer">
+		<p><span>&copy; 2013 Joe Jaworski<br />
+		all rights reserved&nbsp;&nbsp;&brvbar;&nbsp;&nbsp;<a href="njs.html" onmouseover="this.href='mail' + 'to:' + 'jj' + String.fromCharCode(64) + 'joejaworski' + '.' + 'com'">Email</a></span></p>
+	</div>
+
+</div>
+</body>
+</html>
+		
