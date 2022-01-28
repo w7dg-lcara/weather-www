@@ -13,23 +13,26 @@ require 5.003;
 use warnings;
 use strict;
 
+my $weather_www = $ENV{'HOME'} . "/weather/weather-www";
+my $weather_templates = "$weather_www/templates";
+
 ################  start of user variables #####################
-my $vpweather	= "/root/vproweather-0.8/vproweather";			# path to vproweather
-my $vpreplace	= "/root/vproreplace-0.3/vproreplace";			# path to vproreplace
-my $serport	= "/dev/remserial1";					# serial port of Vantage Pro
-my $rtdata	= "/root/weather/rtdata";				# vproweather raw real time data
-my $wxdata	= "/root/weather/wxdata";				# vproweather raw extended data
-my $synopsis	= "/root/weather/synopsis.txt";				# noaa synopsis scrape file
-my $rttmplfile 	= "/root/weather/index.tmpl";				# vproreplace template file
-my $rtOutParse 	= "/root/weather/rt1.tmpl";				# output realtime html file parse 
-my $rtOutParse2	= "/root/weather/rt2.tmpl";				# output realtime html file parse 
+my $vpweather	= $ENV{'HOME'} . "/weather/vproweather";			# path to vproweather
+my $vpreplace	= $ENV{'HOME'} . "/weather/vproreplace";			# path to vproreplace
+my $serport     = "/dev/ttyUSB0";
+my $rtdata	= "$weather_templates/rtdata";				# vproweather raw real time data
+my $wxdata	= "$weather_templates/wxdata";				# vproweather raw extended data
+my $synopsis	= "$weather_templates/synopsis.txt";			# noaa synopsis scrape file
+my $rttmplfile 	= "$weather_templates/index.tmpl";			# vproreplace template file
+my $rtOutParse 	= "$weather_templates/rt1.tmpl";			# output realtime html file parse 
+my $rtOutParse2	= "$weather_templates/rt2.tmpl";			# output realtime html file parse 
 my $rtOutWeb	= "/var/www/weather/index.html";			# output realtime html file web
 
-my $tmplfile1	= "/root/weather/temp.tmpl";				# template file-1
+my $tmplfile1	= "$weather_templates/temp.tmpl";			# template file-1
 my $outfile1	= "/var/www/weather/temp.html";				# html output file-1 
-my $tmplfile2	= "/root/weather/wind.tmpl";				# template file-2
+my $tmplfile2	= "$weather_templates/wind.tmpl";			# template file-2
 my $outfile2	= "/var/www/weather/wind.html";				# html output file-2 
-my $tmplfile3	= "/root/weather/rain.tmpl";				# template file-3
+my $tmplfile3	= "$weather_templates/rain.tmpl";			# template file-3
 my $outfile3	= "/var/www/weather/rain.html";				# html output file-3 
 my @remserial	= ("/root/remserial-1.4/remserial", "-d", "-r", "192.168.0.8", "-p", "5001", "-l", "/dev/remserial1", "/dev/ptmx", "&");
 
@@ -44,7 +47,7 @@ unless (@ARGV == 1 && ($ARGV[0] eq "-r" || $ARGV[0] eq "-x"))
 	exit;
 }
 
-&checkRS();								# check and restart remserial
+#&checkRS();								# check and restart remserial
 
 if(&checkVPInst())						# check for vproweather running
 {
