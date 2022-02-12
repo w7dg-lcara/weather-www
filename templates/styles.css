@@ -1,7 +1,7 @@
 /* Main layout and header */
 body {background:url(img/bg.gif) repeat-y top center #eaeaea; color:#3a3a3a; font:76% Verdana,Tahoma,Arial,sans-serif; line-height:1.4em; margin:0 auto; padding:0;}
 #wrap {background:#fff; color:#303030; margin:0 auto; padding:1px 5px; width:760px;}
-#header {background:url(img/front.jpg) no-repeat bottom left #fff; color:#505050; height:200px; margin:0 0 10px; padding:0;}
+#header {background:url(img/front.jpg) no-repeat bottom left #fff; color:#808080; height:150px; margin:0 0 10px; padding:0;}
 #header h1 {font-size:3.0em; font-weight:400; letter-spacing:-2px; margin:0 0 15px 15px; padding:20px 0 0;}
 #header h1 a,#header h1 a:hover {font-weight:400; padding:0;}
 #header p {font-size:1.1em; letter-spacing:-1px; margin:0 0 20px 15px; padding:0 0 0 3px;}

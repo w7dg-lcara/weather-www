@@ -5,21 +5,21 @@ use LWP::UserAgent;
 my $ua = LWP::UserAgent->new;
 $ua->timeout(10);
 
-my $response = $ua->get("http://www.wunderground.com/DisplayDisc.asp?DiscussionCode=GSP&StateCode=NC&SafeCityName=Candler");
+my $response = $ua->get("https://forecast.weather.gov/product.php?site=PQR&issuedby=PQR&product=AFD&format=txt&version=1&glossary=1");
 
 if ($response->is_success)
 {
-    open(my $FH, ">/root/weather/synopsis.txt");
+    open(my $FH, ">/home/pi/weather/weather-www/templates/synopsis.txt");
     print $FH "noaa_synopsis = ";
 
-    if($response->content =~ m/Synopsis...(.*?)&&/gsm)
+    if($response->content =~ m/SYNOPSIS...(.*?)&&/gsm)
     {
 	   	my $raw = $1;
-	   	$raw =~ s/[\r\n]//g;
+	   	$raw =~ s/[\r\n]/ /g;
 	   	print $FH $raw;
 	   	close($FH);
     }
-}   
+}
 
 exit;
 
